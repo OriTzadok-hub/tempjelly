@@ -1,0 +1,21 @@
+name: Test Self-Hosted Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run a test script
+        run: |
+          echo "✅ Runner is working!"
+          uname -a
+          echo "Current directory:"
+          pwd
+          echo "Listing files:"
+          ls -la
+
